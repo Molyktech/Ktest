@@ -1,0 +1,169 @@
+/* card styles */
+.form-card {
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9,
+    -20px -20px 60px #ffffff;
+}
+
+.jumbotron {
+  min-height: 500px;
+  padding: 40px;
+}
+
+.wrapper {
+  margin: 20px 0 0 0;
+}
+
+
+/* card input */
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+
+  flex: 1 0 12%;
+}
+
+.input-container {
+  background-color: #f5f6f0;
+  border-radius: 16px;
+  border: 1px solid #fff;
+  padding: 8px;
+  box-shadow: 9px 9px 16px rgba(189, 189, 189, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+  margin: 0 15px;
+
+}
+
+.input-outer {
+  padding: 0.5rem 1rem;
+  border-radius: 11px;
+  box-shadow: inset 10px 10px 15px -10px #c3c3c3,
+    inset -10px -10px 15px -10px #ffffff;
+  display: flex;
+}
+
+.input-inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex: 1;
+
+}
+
+.input {
+
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 1rem;
+  letter-spacing: 0.75px;
+  width: 100%;
+}
+
+
+/* remove arrows from the input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+@media (max-width: 1000px) {
+  .flex-grid {
+    display: block;
+  }
+
+  .col {
+    margin: 10px auto;
+    max-width: 400px;
+  }
+
+  .button {
+    margin: 30px 0;
+  }
+
+  .button span {
+    font-size: 1.5em;
+
+  }
+}
+
+/* end of input */
+
+/* button for the form */
+.button {
+  width: 100%;
+
+  background: #f5f6f0;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+    6px 6px 10px rgba(0, 0, 0, 0.2);
+  color: rgb(52, 176, 248);
+  outline: none;
+  border: 0;
+  font-weight: 500;
+}
+
+.button.submit-button {
+  height: 100px;
+}
+
+.button.reset-button {
+  height: 60px;
+
+  font-size: 1.3em;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: rgb(52, 176, 248);
+  color: #fff;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+    6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  opacity: 1;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+    inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  color: rgb(52, 176, 248);
+}
+
+.button span {
+  line-height: 100px;
+  font-family: "Montserrat",
+    sans-serif;
+  font-size: 1.2em;
+  font-weight: semibold;
+}
+
+/* end of button */
+
+/* div for result */
+#result-container {
+  max-width: 200px;
+  margin: 120px auto;
+}
+
+.result {
+  border-bottom: 2px solid rgb(52, 176, 248);
+
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* end of card styles */

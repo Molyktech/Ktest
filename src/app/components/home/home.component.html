@@ -1,0 +1,96 @@
+<section id="hero-container">
+  <div class="form-card jumbotron">
+    <div class="wrapper">
+      <form [formGroup]="kangarooForm" (ngSubmit)="getResult()">
+        <div class="flex-grid">
+          <div class="col input-container">
+            <label for="x1">X1</label>
+            <div
+              class="input-outer"
+              [ngClass]="{ 'is-invalid': submitted && fc.x1.errors }"
+            >
+              <div class="input-inner">
+                <input
+                  class="input"
+                  type="number"
+                  formControlName="x1"
+                  id="x1"
+                />
+              </div>
+            </div>
+            <div *ngIf="submitted && fc.x1.errors" class="invalid-feedback">
+              <div *ngIf="fc.x1.errors.required">Please type in a number</div>
+            </div>
+            <!-- <div *ngIf="fc.x1.errors.pattern">Input must be a number</div> -->
+          </div>
+
+          <div class="col input-container">
+            <label for="v1">V1</label>
+            <div class="input-outer">
+              <div class="input-inner">
+                <input
+                  class="input"
+                  type="number"
+                  formControlName="v1"
+                  id="v1"
+                />
+              </div>
+            </div>
+            <div *ngIf="submitted && fc.v1.errors" class="invalid-feedback">
+              <div *ngIf="fc.v1.errors.required">Please type in a number</div>
+            </div>
+            <!-- <div *ngIf="fc.v1.errors.pattern">Input must be a number</div> -->
+          </div>
+
+          <div class="col input-container">
+            <label for="x2">X2</label>
+            <div class="input-outer">
+              <div class="input-inner">
+                <input
+                  class="input"
+                  type="number"
+                  formControlName="x2"
+                  id="x2"
+                />
+              </div>
+            </div>
+            <div *ngIf="submitted && fc.x1.errors" class="invalid-feedback">
+              <div *ngIf="fc.x2.errors.required">Please type in a number</div>
+            </div>
+            <!-- <div *ngIf="fc.x2.errors.pattern">Input must be a number</div> -->
+          </div>
+
+          <div class="col input-container">
+            <label for="v2">V2</label>
+            <div class="input-outer">
+              <div class="input-inner">
+                <input
+                  class="input"
+                  type="number"
+                  formControlName="v2"
+                  id="v2"
+                />
+              </div>
+            </div>
+            <div *ngIf="submitted && fc.x1.errors" class="invalid-feedback">
+              <div *ngIf="fc.v2.errors.required">Please type in a number</div>
+            </div>
+            <!-- <div *ngIf="fc.v2.errors.pattern">Input must be a number</div> -->
+          </div>
+          <div class="col">
+            <button class="button submit-button" type="submit">
+              <span>Get Result</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div id="result-container">
+        <p class="result"><span *ngIf="result">Result:</span>{{ result }}</p>
+        <button class="button reset-button" type="button" (click)="resetForm()">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

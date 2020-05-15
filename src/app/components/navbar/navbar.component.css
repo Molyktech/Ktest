@@ -1,0 +1,64 @@
+.navbar {
+  min-height: 5rem;
+}
+
+a.navbar-brand {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(52, 176, 248) !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+a.logo:hover,
+a.logo:active,
+a.logo:focus {
+  text-decoration: none;
+}
+
+a.nav-link {
+  position: relative;
+
+  text-decoration: none;
+}
+
+a.nav-link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(52, 176, 248);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+a:hover {
+  color: rgb(52, 176, 248);
+  text-decoration: none;
+}
+
+
+
+li.nav-item .btn {
+  margin-top: 0.2rem;
+  margin-left: 0.7rem;
+}
+
+li.nav-item {
+  margin-top: 0 0.3rem;
+
+}
+
+a.nav-link.active:before,
+a.nav-link:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* end of nav */

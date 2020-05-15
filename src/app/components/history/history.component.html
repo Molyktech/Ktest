@@ -1,0 +1,58 @@
+<div class="container">
+  <div *ngIf="!collection">
+    <app-error-msg></app-error-msg>
+  </div>
+  <div *ngIf="collection && collection.length">
+    <label>Items per page</label>
+    <select
+      [(ngModel)]="itemsPerPage"
+      class="form-control ml-4 mt-4 d-inline-block w-auto"
+    >
+      <option *ngFor="let limit of [2, 5, 10, 20, 30]">{{ limit }}</option>
+    </select>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>S/No.</th>
+          <th>Date</th>
+          <th>Fields</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let data of collection
+              | paginate
+                : {
+                    itemsPerPage: itemsPerPage,
+                    currentPage: p,
+                    totalItems: collection.length
+                  };
+            let i = index
+          "
+        >
+          <td>{{ absoluteIndex(i + 1) }}</td>
+          <td>{{ data.date | date }} - {{ data.date | date: "HH:mm" }}</td>
+          <td>{{ data.fields }}</td>
+          <td>{{ data.result }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-between">
+      <p *ngIf="collection && collection.length">Now on page {{ p }}</p>
+
+      <pagination-controls
+        (pageChange)="p = $event"
+        directionLinks="true"
+        autoHide="true"
+        responsive="true"
+        previousLabel="Previous"
+        nextLabel="Next"
+        screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page"
+        screenReaderCurrentLabel="You're on page"
+      ></pagination-controls>
+    </div>
+  </div>
+</div>
